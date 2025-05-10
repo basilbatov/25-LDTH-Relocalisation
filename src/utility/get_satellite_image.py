@@ -1,5 +1,6 @@
+import cv2
+import numpy as np
 import requests
-from PIL import Image
 from io import BytesIO
 import matplotlib.pyplot as plt
 from src.utility.bounding_box import BoundingBox, Projection
@@ -35,8 +36,8 @@ response = requests.get(url, params=params)
 
 try:
     response.raise_for_status()
-    image = Image.open(BytesIO(response.content))
-    plt.imshow(image) # type: ignore
+    image = cv2.imdecode(np.frombuffer(response.content, np.uint8), cv2.IMREAD_UNCHANGED)
+    plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB)) # type: ignore
     plt.axis('off') # type: ignore
     plt.show() # type: ignore
 
