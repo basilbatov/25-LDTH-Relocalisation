@@ -15,6 +15,7 @@ requires-python = ">=3.8"
 
 dependencies = [
     "matplotlib>=3.7.5",
+    "opencv-python>=4.11.0.86",
     "owslib>=0.31.0",
     "pillow>=10.4.0",
     "pyproj>=3.5.0",
