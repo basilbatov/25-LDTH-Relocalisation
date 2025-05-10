@@ -22,6 +22,10 @@ params = {
     "bbox": example_bbox.to_query_string(),
     "bboxSR": "3035",
     "size": "512,512",
+    # "size": "1024,1024",
+    # "size": "2048,2048",
+    # "size": "5096,5096",
+    # "size": "10192,10192", 
     "imageSR": "3035",
     "format": "png",  # can also be "tiff"
     "f": "image",
